@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série Off-Campus | Briar University</title>
+    <style>
+        :root {
+            --primary-color: #1a2a3a;
+            --secondary-color: #b8860b;
+            --accent-color: #8b0000;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --light-text: #666666;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .subtitle {
+            font-weight: bold;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .details-section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .details-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-block h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Série Off-Campus</h1>
+        <p>O universo literário de Elle Kennedy sobre o time de hóquei da Briar University</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Sobre o Universo</h2>
+            <p>A série <strong>Off-Campus</strong> (Amores Improváveis) é uma das franquias de romance contemporâneo de maior sucesso mundial. Ambientada na fictícia Briar University, a trama acompanha quatro jogadores de hóquei universitários e suas jornadas em busca do sucesso nos esportes, na vida acadêmica e nas relações pessoais.</p>
+        </section>
+
+        <section class="grid">
+            <article class="card">
+                <h3>Livro 1: O Acordo</h3>
+                <p class="subtitle">Hannah Wells & Garrett Graham</p>
+                <p>Hannah precisa de ajuda para chamar a atenção de seu crush, enquanto Garrett precisa passar em uma matéria para continuar no time. Um acordo de tutoria transforma a vida de ambos.</p>
+            </article>
+
+            <article class="card">
+                <h3>Livro 2: A Caída</h3>
+                <p class="subtitle">Grace Ivers & John Logan</p>
+                <p>Logan está prestes a se formar e tem um plano de vida definido, até conhecer Grace, uma caloura que vira seu mundo de cabeça para baixo em um momento de incertezas.</p>
+            </article>
+
+            <article class="card">
+                <h3>Livro 3: O Jogo</h3>
+                <p class="subtitle">Allie Hayes & Dean Di Laurentis</p>
+                <p>Dean nunca precisou se esforçar por uma garota até encontrar Allie, a melhor amiga da namorada de Garrett, que está passando por uma fase de reconstrução pessoal.</p>
+            </article>
+
+            <article class="card">
+                <h3>Livro 4: A Conquista</h3>
+                <p class="subtitle">Sabrina James & Tucker</p>
+                <p>Sabrina tem seu futuro inteiramente planejado para a faculdade de Direito. Tucker é o capitão focado que vê na determinação dela o desafio perfeito para sua vida.</p>
+            </article>
+        </section>
+
+        <section class="details-section">
+            <h2>Elementos Centrais da Saga</h2>
+            
+            <div class="info-block">
+                <h4>Briar University</h4>
+                <p>A ambientação universitária serve como plano de fundo para o amadurecimento dos personagens, abordando a transição da juventude para a vida adulta e o início de carreiras profissionais.</p>
+            </div>
+
+            <div class="info-block">
+                <h4>Dinâmica de Equipe e Lealdade</h4>
+                <p>Além dos romances centrais, a força do grupo de amigos e a dinâmica dentro do vestiário de hóquei criam uma narrativa contínua e interligada entre todos os volumes.</p>
+            </div>
+
+            <div class="info-block">
+                <h4>Legado Literário</h4>
+                <p>A série estabeleceu novos padrões para romances no cenário <em>New Adult</em>, originando séries derivadas como <em>Briar U</em> e inspirando uma legião de leitores ao redor do mundo.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Portal Informativo Off-Campus — Guia do Leitor</p>
+    </footer>
+
+</body>
+</html>
