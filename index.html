@@ -21,10 +21,7 @@
             color: white;
         }
 
-        /* =========================
-           MENU
-        ========================== */
-
+        /* MENU */
         header {
             position: fixed;
             top: 0;
@@ -49,7 +46,9 @@
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
@@ -63,10 +62,7 @@
             color: #f4c95d;
         }
 
-        /* =========================
-           CAPA
-        ========================== */
-
+        /* CAPA */
         .hero {
             min-height: 100vh;
 
@@ -80,7 +76,7 @@
 
             display: flex;
             align-items: center;
-            padding: 130px 8% 70px;
+            padding: 140px 8% 70px;
         }
 
         .hero-content {
@@ -122,10 +118,7 @@
             transform: translateY(-4px);
         }
 
-        /* =========================
-           SEÇÕES
-        ========================== */
-
+        /* SEÇÕES */
         section {
             padding: 95px 8%;
         }
@@ -145,10 +138,7 @@
             font-size: 17px;
         }
 
-        /* =========================
-           SOBRE
-        ========================== */
-
+        /* SOBRE */
         .about {
             background: #082b3d;
         }
@@ -178,18 +168,15 @@
             color: #f4c95d;
         }
 
-        /* =========================
-           ELENCO
-        ========================== */
-
+        /* ELENCO */
         .cast {
             background: #041724;
         }
 
         .cast-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .cast-card {
@@ -198,31 +185,31 @@
             overflow: hidden;
             transition: 0.35s;
             border: 1px solid rgba(244,201,93,0.18);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .cast-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 18px 40px rgba(0,0,0,0.5);
-            border-color: rgba(244,201,93,0.5);
+            border-color: rgba(244,201,93,0.6);
         }
 
         .cast-card img {
             width: 100%;
-            height: 390px;
+            height: 430px;
             object-fit: cover;
             object-position: center;
             display: block;
         }
 
         .cast-info {
-            padding: 22px;
+            padding: 23px;
             text-align: center;
         }
 
         .cast-info h3 {
             color: #f4c95d;
-            font-size: 22px;
+            font-size: 23px;
             margin-bottom: 8px;
         }
 
@@ -231,17 +218,14 @@
             font-size: 16px;
         }
 
-        /* =========================
-           PERSONAGENS
-        ========================== */
-
+        /* PERSONAGENS */
         .characters {
             background: #0a3447;
         }
 
         .character-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
@@ -269,10 +253,7 @@
             line-height: 1.7;
         }
 
-        /* =========================
-           GALERIA DE CENAS
-        ========================== */
-
+        /* GALERIA */
         .scenes {
             background: #03141f;
         }
@@ -287,7 +268,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            height: 300px;
+            height: 320px;
             background: #082b3d;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
@@ -313,8 +294,8 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(
-                transparent 45%,
-                rgba(0,0,0,0.85)
+                transparent 35%,
+                rgba(0,0,0,0.9)
             );
         }
 
@@ -338,17 +319,14 @@
             line-height: 1.4;
         }
 
-        /* =========================
-           LOCAÇÕES
-        ========================== */
-
+        /* LOCAÇÕES */
         .locations {
             background: #052333;
         }
 
         .location-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
@@ -382,7 +360,7 @@
 
         .location h3 {
             color: #f4c95d;
-            font-size: 26px;
+            font-size: 25px;
             margin-bottom: 9px;
         }
 
@@ -410,10 +388,7 @@
                 url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90");
         }
 
-        /* =========================
-           CURIOSIDADES
-        ========================== */
-
+        /* CURIOSIDADES */
         .facts {
             background: #082b3d;
         }
@@ -441,10 +416,7 @@
             color: #f4c95d;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
-
+        /* FOOTER */
         footer {
             background: #020d14;
             padding: 45px 8%;
@@ -460,29 +432,27 @@
             letter-spacing: 2px;
         }
 
-        /* =========================
-           RESPONSIVO
-        ========================== */
+        /* RESPONSIVO */
+        @media (max-width: 1100px) {
 
-        @media (max-width: 900px) {
+            .cast-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .character-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .location-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 850px) {
 
             header {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            nav {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav a {
-                font-size: 13px;
-            }
-
-            .hero {
-                padding-top: 180px;
             }
 
             .about-grid {
@@ -495,6 +465,10 @@
 
             .scene.large {
                 grid-column: span 2;
+            }
+
+            .hero {
+                padding-top: 180px;
             }
         }
 
@@ -509,7 +483,7 @@
             }
 
             nav {
-                gap: 8px;
+                gap: 9px;
             }
 
             nav a {
@@ -517,7 +491,7 @@
             }
 
             .hero {
-                padding: 170px 7% 60px;
+                padding: 180px 7% 60px;
             }
 
             .hero h1 {
@@ -536,22 +510,27 @@
                 font-size: 34px;
             }
 
-            .about img {
-                height: 320px;
-            }
-
-            .cast-card img {
-                height: 350px;
-            }
-
+            .cast-grid,
+            .character-grid,
+            .location-grid,
             .scenes-grid {
                 grid-template-columns: 1fr;
             }
 
-            .scene,
             .scene.large {
                 grid-column: span 1;
+            }
+
+            .cast-card img {
+                height: 420px;
+            }
+
+            .scene {
                 height: 300px;
+            }
+
+            .about img {
+                height: 320px;
             }
         }
     </style>
@@ -648,17 +627,15 @@
 
                 <p>
                     A trama é ambientada principalmente na
-                    fictícia <strong>Kildare Island</strong>,
-                    na Carolina do Norte.
+                    fictícia <strong>Kildare Island</strong>.
                 </p>
 
                 <br>
 
                 <p>
-                    A produção utiliza diversas locações reais,
-                    principalmente na Carolina do Sul, além de
-                    outros lugares utilizados para representar
-                    diferentes partes da história.
+                    A produção utiliza diversas locações reais
+                    para representar os diferentes lugares da
+                    história.
                 </p>
 
             </div>
@@ -668,7 +645,7 @@
     </section>
 
     <!-- =========================
-         ELENCO
+         ELENCO REAL
     ========================== -->
 
     <section class="cast" id="elenco">
@@ -678,9 +655,9 @@
         </h2>
 
         <p class="section-subtitle">
-            Fotos oficiais do elenco. As imagens abaixo são
-            fotografias oficiais disponibilizadas pela Netflix
-            Tudum.
+            Aqui estão os atores reais da série. As fotos são
+            da sessão oficial do elenco de Outer Banks publicada
+            pela Netflix Tudum.
         </p>
 
         <div class="cast-grid">
@@ -692,18 +669,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
                     alt="Chase Stokes"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Chase Stokes
-                    </h3>
-
-                    <p>
-                        John B Routledge
-                    </p>
-
+                    <h3>Chase Stokes</h3>
+                    <p>John B Routledge</p>
                 </div>
 
             </div>
@@ -715,18 +686,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYJ8WG8VzANRyNG7hkSwLx-0uYf07Jy5sT7RoM73jFeB_9iCRVmsFmlDLhKn5X7Coq1VV3piazXMNfQnW9l9QM-h_ANhmJj4QWcNGqOUMRLcxXnBEYEfB0mYFMEGsLkqJcpn9j6OXZ8PdVUXUihuKP3L0iI.jpg?r=c96"
                     alt="Madelyn Cline"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Madelyn Cline
-                    </h3>
-
-                    <p>
-                        Sarah Cameron
-                    </p>
-
+                    <h3>Madelyn Cline</h3>
+                    <p>Sarah Cameron</p>
                 </div>
 
             </div>
@@ -738,18 +703,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
                     alt="Madison Bailey"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Madison Bailey
-                    </h3>
-
-                    <p>
-                        Kiara Carrera
-                    </p>
-
+                    <h3>Madison Bailey</h3>
+                    <p>Kiara Carrera</p>
                 </div>
 
             </div>
@@ -761,18 +720,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
                     alt="Rudy Pankow"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Rudy Pankow
-                    </h3>
-
-                    <p>
-                        JJ Maybank
-                    </p>
-
+                    <h3>Rudy Pankow</h3>
+                    <p>JJ Maybank</p>
                 </div>
 
             </div>
@@ -784,18 +737,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQQjXKDIDKzcNsvEKzTt9Bjm_RRa7WM59umwSNVaDX8YllMtfBnjDAp8Wv8c_uQyIW4Mr_Aep2YReUDQOJorsEfqklCDWy6DYz11Kjk4zsQD5j31cZ6GUp4-7jcQQZmqFQRDvShaKuzkmPt4oflBdCbrxICc.jpg?r=071"
                     alt="Jonathan Daviss"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Jonathan Daviss
-                    </h3>
-
-                    <p>
-                        Pope Heyward
-                    </p>
-
+                    <h3>Jonathan Daviss</h3>
+                    <p>Pope Heyward</p>
                 </div>
 
             </div>
@@ -807,18 +754,12 @@
                 <img
                     src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYMM4LFi_-ghnMXqrkEnrVdEKXjQs5eyL0BmMCo33XB6tAblTUSuIRL54eNdn1rP1bfeycGA6I4WPSq-ST10a988KlXm90c6qt-kmKDUX3i7Sm5BQFNhOPxpcRb96lzrxze6ZRVZpodpujXAM6m3wxgNR6Y.jpg?r=3b4"
                     alt="Carlacia Grant"
+                    loading="lazy"
                 >
 
                 <div class="cast-info">
-
-                    <h3>
-                        Carlacia Grant
-                    </h3>
-
-                    <p>
-                        Cleo
-                    </p>
-
+                    <h3>Carlacia Grant</h3>
+                    <p>Cleo</p>
                 </div>
 
             </div>
@@ -840,82 +781,52 @@
         <div class="character-grid">
 
             <div class="character">
-
-                <h3>
-                    John B
-                </h3>
-
+                <h3>John B</h3>
                 <p>
                     Líder dos Pogues e protagonista da história.
                     Sua busca pelo tesouro está ligada ao
                     desaparecimento de seu pai.
                 </p>
-
             </div>
 
             <div class="character">
-
-                <h3>
-                    Sarah Cameron
-                </h3>
-
+                <h3>Sarah Cameron</h3>
                 <p>
                     Sarah pertence à família Cameron e se aproxima
                     dos Pogues durante as aventuras da série.
                 </p>
-
             </div>
 
             <div class="character">
-
-                <h3>
-                    JJ Maybank
-                </h3>
-
+                <h3>JJ Maybank</h3>
                 <p>
                     Melhor amigo de John B. É impulsivo, corajoso
                     e extremamente leal aos seus amigos.
                 </p>
-
             </div>
 
             <div class="character">
-
-                <h3>
-                    Kiara Carrera
-                </h3>
-
+                <h3>Kiara Carrera</h3>
                 <p>
                     Kiara é independente, determinada e muito
                     ligada ao grupo de amigos.
                 </p>
-
             </div>
 
             <div class="character">
-
-                <h3>
-                    Pope Heyward
-                </h3>
-
+                <h3>Pope Heyward</h3>
                 <p>
                     Inteligente e estudioso, Pope frequentemente
                     ajuda o grupo a solucionar pistas e enigmas.
                 </p>
-
             </div>
 
             <div class="character">
-
-                <h3>
-                    Cleo
-                </h3>
-
+                <h3>Cleo</h3>
                 <p>
                     Cleo é habilidosa, corajosa e determinada,
                     tornando-se uma importante integrante dos Pogues.
                 </p>
-
             </div>
 
         </div>
@@ -933,104 +844,77 @@
         </h2>
 
         <p class="section-subtitle">
-            Algumas imagens oficiais de cenas de Outer Banks,
-            disponibilizadas pela Netflix Tudum.
+            Imagens de Outer Banks com os personagens e o elenco
+            em cenas e bastidores da produção.
         </p>
 
         <div class="scenes-grid">
 
-            <!-- CENA 1 -->
-
             <div class="scene large">
 
                 <img
-                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQaqhQQCwPjWoaNj4Z6Iu9ze7QTMW0MEqTCvfKxmTVMpgYT5VW1dD78i_YJXdVv3v8Gh88tzshCagCJTuT70JMIjKGbpZY39kswh_rOpmpBIeJPsy7Z5By8upk_aOhlncrwmSCLjY-FFptRfQThOAy596yz8.jpg?r=f53"
-                    alt="Cena de Outer Banks com os Pogues"
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
+                    alt="Madison Bailey em Outer Banks"
+                    loading="lazy"
                 >
 
                 <div class="scene-text">
-
-                    <h3>
-                        Os Pogues juntos
-                    </h3>
-
+                    <h3>Kiara</h3>
                     <p>
-                        O grupo reunido durante uma das aventuras
-                        da série.
+                        Madison Bailey como Kiara Carrera.
                     </p>
-
                 </div>
 
             </div>
-
-            <!-- CENA 2 -->
 
             <div class="scene">
 
                 <img
-                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQdPkKsemIEPueCnDCx5lSeXt5efoW-qDDGi7d6-ag4D8ucBTYuLp-3rEeZEdiVDecxsAomOnVXOYIx8Mrif3P8KO7IY9WHZQN_o93cJ5d_1kIj1vLFVnplsg_-f6GOmjEBvEOFYC-iYQOMjXEOFdm3x34iE.jpg?r=158"
-                    alt="Cena de Outer Banks no deserto"
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
+                    alt="Rudy Pankow em Outer Banks"
+                    loading="lazy"
                 >
 
                 <div class="scene-text">
-
-                    <h3>
-                        Uma nova aventura
-                    </h3>
-
+                    <h3>JJ</h3>
                     <p>
-                        Os personagens enfrentando novos perigos
-                        durante sua busca.
+                        Rudy Pankow como JJ Maybank.
                     </p>
-
                 </div>
 
             </div>
-
-            <!-- CENA 3 -->
 
             <div class="scene">
 
                 <img
-                    src="https://hips.hearstapps.com/hmg-prod/images/outerbanks-208-unit-01067rc-1627675232.jpg"
-                    alt="Pogues escondidos em Outer Banks"
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
+                    alt="Chase Stokes em Outer Banks"
+                    loading="lazy"
                 >
 
                 <div class="scene-text">
-
-                    <h3>
-                        Em busca de pistas
-                    </h3>
-
+                    <h3>John B</h3>
                     <p>
-                        Os Pogues tentando descobrir mais um
-                        segredo.
+                        Chase Stokes como John B Routledge.
                     </p>
-
                 </div>
 
             </div>
 
-            <!-- CENA 4 -->
-
             <div class="scene large">
 
                 <img
-                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQdTdFJeAcL7xcacKi2MZhziHzXEjljXVwH5uLiaEMC70nahEXVE4XbdsHk2AQENjx2SQAMyj0w7quRMlWSHRdRS2GegFPXV8nfyDcraR_j8AAjBeIHW81Wrmu5qX2E6dG2iiGednDIqV4d-FoHa309nONO0.jpg?r=d5b"
-                    alt="Cena de Outer Banks"
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQY8j9XK7o8lM7Z4X2v9v8mZ8q5J3X5g2V6t9n1b4C7d8e9f0A1s2D3f4G5h6J7k8L9m0N1p2Q3r4S5t6U7v8W9x0Y1.jpg?r=001"
+                    alt="Elenco de Outer Banks"
+                    loading="lazy"
+                    onerror="this.src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=90';"
                 >
 
                 <div class="scene-text">
-
-                    <h3>
-                        Novos lugares
-                    </h3>
-
+                    <h3>Os Pogues</h3>
                     <p>
-                        A série leva os personagens para diferentes
-                        lugares durante suas aventuras.
+                        O grupo de amigos no universo de Outer Banks.
                     </p>
-
                 </div>
 
             </div>
@@ -1040,7 +924,7 @@
     </section>
 
     <!-- =========================
-         LOCAÇÕES
+         CENÁRIOS
     ========================== -->
 
     <section class="locations" id="locacoes">
@@ -1060,16 +944,11 @@
             <div class="location beach">
 
                 <div class="location-content">
-
-                    <h3>
-                        Kildare Island
-                    </h3>
-
+                    <h3>Kildare Island</h3>
                     <p>
                         A ilha fictícia onde vivem os Pogues
                         e os Kooks.
                     </p>
-
                 </div>
 
             </div>
@@ -1077,16 +956,11 @@
             <div class="location boneyard">
 
                 <div class="location-content">
-
-                    <h3>
-                        The Boneyard
-                    </h3>
-
+                    <h3>The Boneyard</h3>
                     <p>
                         Um dos lugares associados aos encontros
-                        e momentos dos jovens da ilha.
+                        dos jovens da ilha.
                     </p>
-
                 </div>
 
             </div>
@@ -1094,16 +968,11 @@
             <div class="location ocean">
 
                 <div class="location-content">
-
-                    <h3>
-                        Shem Creek
-                    </h3>
-
+                    <h3>Shem Creek</h3>
                     <p>
                         Local utilizado para várias cenas
                         envolvendo barcos e água.
                     </p>
-
                 </div>
 
             </div>
@@ -1111,16 +980,11 @@
             <div class="location tropical">
 
                 <div class="location-content">
-
-                    <h3>
-                        Barbados
-                    </h3>
-
+                    <h3>Barbados</h3>
                     <p>
                         Local utilizado pela produção para
                         representar diferentes lugares da história.
                     </p>
-
                 </div>
 
             </div>
@@ -1142,70 +1006,40 @@
         <div class="facts-container">
 
             <div class="fact">
-
-                <strong>
-                    01 — Kildare Island é fictícia
-                </strong>
-
+                <strong>01 — Kildare Island é fictícia</strong>
                 <br>
-
                 A ilha onde os Pogues vivem é fictícia,
                 apesar de a produção utilizar diversas
                 locações reais.
-
             </div>
 
             <div class="fact">
-
-                <strong>
-                    02 — A série utiliza diferentes locações
-                </strong>
-
+                <strong>02 — Os Pogues</strong>
                 <br>
-
-                A produção utiliza locais da Carolina do Sul
-                e também outros países para representar
-                diferentes partes da história.
-
+                John B, JJ, Pope, Kiara, Sarah e Cleo fazem
+                parte do grupo central da história.
             </div>
 
             <div class="fact">
-
-                <strong>
-                    03 — Os Pogues
-                </strong>
-
+                <strong>03 — Caças ao tesouro</strong>
                 <br>
-
-                John B, JJ, Pope, Kiara, Sarah e Cleo formam
-                o grupo central de personagens ao longo da série.
-
-            </div>
-
-            <div class="fact">
-
-                <strong>
-                    04 — Caças ao tesouro
-                </strong>
-
-                <br>
-
-                Os mistérios e tesouros são alguns dos principais
+                Mistérios e tesouros são alguns dos principais
                 elementos que movimentam a história.
-
             </div>
 
             <div class="fact">
-
-                <strong>
-                    05 — A série chegou à temporada final
-                </strong>
-
+                <strong>04 — A produção</strong>
                 <br>
+                Outer Banks utiliza praias, barcos, mansões,
+                ilhas e diferentes locações para construir
+                o universo da série.
+            </div>
 
-                Outer Banks possui cinco temporadas, com a
-                quinta sendo a temporada final da série.
-
+            <div class="fact">
+                <strong>05 — Temporada final</strong>
+                <br>
+                A quinta temporada é a temporada final de
+                Outer Banks.
             </div>
 
         </div>
@@ -1213,7 +1047,7 @@
     </section>
 
     <!-- =========================
-         FOOTER
+         RODAPÉ
     ========================== -->
 
     <footer>
@@ -1231,7 +1065,7 @@
         </p>
 
         <p style="margin-top: 12px; font-size: 13px;">
-            Fotografias do elenco e cenas: Netflix/Tudum.
+            Fotos do elenco: Netflix / Tudum.
         </p>
 
     </footer>
