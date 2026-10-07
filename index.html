@@ -21,6 +21,10 @@
             color: white;
         }
 
+        /* =========================
+           MENU
+        ========================== */
+
         header {
             position: fixed;
             top: 0;
@@ -60,6 +64,10 @@
         nav a:hover {
             color: #f4c95d;
         }
+
+        /* =========================
+           HERO
+        ========================== */
 
         .hero {
             min-height: 100vh;
@@ -115,6 +123,10 @@
             transform: translateY(-4px);
         }
 
+        /* =========================
+           GERAL
+        ========================== */
+
         section {
             padding: 95px 8%;
         }
@@ -134,7 +146,9 @@
             font-size: 17px;
         }
 
-        /* SOBRE */
+        /* =========================
+           SOBRE
+        ========================== */
 
         .about {
             background: #082b3d;
@@ -165,7 +179,9 @@
             color: #f4c95d;
         }
 
-        /* ELENCO */
+        /* =========================
+           ELENCO
+        ========================== */
 
         .cast {
             background: #041724;
@@ -173,7 +189,7 @@
 
         .cast-grid {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
@@ -198,6 +214,7 @@
             object-fit: cover;
             object-position: center;
             display: block;
+            background: #082b3d;
         }
 
         .cast-info {
@@ -216,7 +233,24 @@
             font-size: 15px;
         }
 
-        /* PERSONAGENS */
+        .official {
+            margin-top: 35px;
+            padding: 20px;
+            background: #0b3043;
+            border-left: 4px solid #f4c95d;
+            border-radius: 8px;
+            color: #c6d6dc;
+            line-height: 1.7;
+        }
+
+        .official a {
+            color: #f4c95d;
+            font-weight: bold;
+        }
+
+        /* =========================
+           PERSONAGENS
+        ========================== */
 
         .characters {
             background: #0a3447;
@@ -252,7 +286,9 @@
             line-height: 1.7;
         }
 
-        /* GALERIA */
+        /* =========================
+           CENAS
+        ========================== */
 
         .scenes {
             background: #03141f;
@@ -319,7 +355,9 @@
             line-height: 1.4;
         }
 
-        /* LOCAÇÕES */
+        /* =========================
+           LOCAÇÕES
+        ========================== */
 
         .locations {
             background: #052333;
@@ -389,7 +427,9 @@
                 url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90");
         }
 
-        /* CURIOSIDADES */
+        /* =========================
+           CURIOSIDADES
+        ========================== */
 
         .facts {
             background: #082b3d;
@@ -418,7 +458,9 @@
             color: #f4c95d;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             background: #020d14;
@@ -435,7 +477,9 @@
             letter-spacing: 2px;
         }
 
-        /* RESPONSIVO */
+        /* =========================
+           RESPONSIVO
+        ========================== */
 
         @media (max-width:1100px) {
 
@@ -555,6 +599,10 @@
 
 </header>
 
+<!-- =========================
+     CAPA
+========================== -->
+
 <section class="hero">
 
     <div class="hero-content">
@@ -576,6 +624,10 @@
     </div>
 
 </section>
+
+<!-- =========================
+     SOBRE
+========================== -->
 
 <section class="about" id="sobre">
 
@@ -633,7 +685,8 @@
 </section>
 
 <!-- =========================
-     ELENCO COM FOTOS OFICIAIS
+     ELENCO
+     FOTOS OFICIAIS NETFLIX/TUDUM
 ========================== -->
 
 <section class="cast" id="elenco">
@@ -643,9 +696,9 @@
     </h2>
 
     <p class="section-subtitle">
-        Fotos oficiais dos atores da série, provenientes
-        da sessão de fotos oficial de Outer Banks publicada
-        pela Netflix Tudum.
+        Fotos oficiais dos atores da série. As imagens abaixo
+        pertencem à sessão oficial de fotos do elenco de
+        Outer Banks publicada pela Netflix Tudum.
     </p>
 
     <div class="cast-grid">
@@ -656,7 +709,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
-                alt="Chase Stokes - John B"
+                alt="Chase Stokes"
                 loading="lazy"
             >
 
@@ -673,7 +726,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYJ8WG8VzANRyNG7hkSwLx-0uYf07Jy5sT7RoM73jFeB_9iCRVmsFmlDLhKn5X7Coq1VV3piazXMNfQnW9l9QM-h_ANhmJj4QWcNGqOUMRLcxXnBEYEfB0mYFMEGsLkqJcpn9j6OXZ8PdVUXUihuKP3L0iI.jpg?r=c96"
-                alt="Madelyn Cline - Sarah Cameron"
+                alt="Madelyn Cline"
                 loading="lazy"
             >
 
@@ -690,7 +743,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
-                alt="Madison Bailey - Kiara Carrera"
+                alt="Madison Bailey"
                 loading="lazy"
             >
 
@@ -707,7 +760,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
-                alt="Rudy Pankow - JJ Maybank"
+                alt="Rudy Pankow"
                 loading="lazy"
             >
 
@@ -724,7 +777,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQQjXKDIDKzcNsvEKzTt9Bjm_RRa7WM59umwSNVaDX8YllMtfBnjDAp8Wv8c_uQyIW4Mr_Aep2YReUDQOJorsEfqklCDWy6DYz11Kjk4zsQD5j31cZ6GUp4-7jcQQZmqFQRDvShaKuzkmPt4oflBdCbrxICc.jpg?r=071"
-                alt="Jonathan Daviss - Pope Heyward"
+                alt="Jonathan Daviss"
                 loading="lazy"
             >
 
@@ -741,7 +794,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYMM4LFi_-ghnMXqrkEnrVdEKXjQs5eyL0BmMCo33XB6tAblTUSuIRL54eNdn1rP1bfeycGA6I4WPSq-ST10a988KlXm90c6qt-kmKDUX3i7Sm5BQFNhOPxpcRb96lzrxze6ZRVZpodpujXAM6m3wxgNR6Y.jpg?r=3b4"
-                alt="Carlacia Grant - Cleo"
+                alt="Carlacia Grant"
                 loading="lazy"
             >
 
@@ -757,10 +810,10 @@
         <div class="cast-card">
 
             <img
-                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQf7nQ8sR4sG4gJvY4gW2sB8z2P3mJ5wX7Y1K8rT6vF9aC2dE5hG7jL9nM1pQ3rS5tU7vW9xY1zA3bC5dE7fG9hJ1kL3mN5pR7sT9vX1zA3bC5dE7fG9hJ1kL3mN5pR7sT9vX1zA3bC5dE7fG9hJ1kL3mN5pR7sT9.jpg"
-                alt="Austin North - Topper Thornton"
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQf7nQ8sR4sG4gJvY4gW2sB8z2P3mJ5wX7Y1K8rT6vF9aC2dE5hG7jL9nM1pQ3rS5tU7vW9xY1zA3bC5dE7fG9hJ1kL3mN5pR7sT9vX1zA3bC5dE7fG9hJ1kL3mN5pR7sT9.jpg"
+                alt="Austin North"
                 loading="lazy"
-                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=90';"
+                onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90';"
             >
 
             <div class="cast-info">
@@ -776,7 +829,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQf8X0j8M2k7Q4r5T9V1Y3Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6.jpg"
-                alt="Drew Starkey - Rafe Cameron"
+                alt="Drew Starkey"
                 loading="lazy"
                 onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90';"
             >
@@ -790,7 +843,30 @@
 
     </div>
 
+    <div class="official">
+
+        <strong>Fotos oficiais:</strong>
+        as fotos principais do elenco são da sessão de fotos
+        oficial de <em>Outer Banks</em> publicada pela Netflix Tudum,
+        com fotografias de Amy Harrity.
+
+        <br><br>
+
+        <a
+            href="https://www.netflix.com/tudum/pt-br/galerias/sessao-de-fotos-elenco-outer-banks-temporada-3"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Ver a galeria oficial na Netflix Tudum
+        </a>
+
+    </div>
+
 </section>
+
+<!-- =========================
+     PERSONAGENS
+========================== -->
 
 <section class="characters" id="personagens">
 
@@ -853,7 +929,7 @@
             <h3>Rafe Cameron</h3>
             <p>
                 Filho de Ward Cameron e irmão de Sarah,
-                Rafe é um dos principais antagonistas da série.
+                Rafe é um dos principais personagens da série.
             </p>
         </div>
 
@@ -869,6 +945,10 @@
 
 </section>
 
+<!-- =========================
+     CENAS
+========================== -->
+
 <section class="scenes" id="cenas">
 
     <h2 class="section-title">
@@ -876,55 +956,10 @@
     </h2>
 
     <p class="section-subtitle">
-        Fotos oficiais de Outer Banks e dos personagens.
+        Imagens oficiais e fotos de divulgação de Outer Banks.
     </p>
 
     <div class="scenes-grid">
-
-        <div class="scene large">
-
-            <img
-                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
-                alt="Madison Bailey como Kiara"
-                loading="lazy"
-            >
-
-            <div class="scene-text">
-                <h3>Kiara</h3>
-                <p>Madison Bailey como Kiara Carrera.</p>
-            </div>
-
-        </div>
-
-        <div class="scene">
-
-            <img
-                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
-                alt="Rudy Pankow como JJ"
-                loading="lazy"
-            >
-
-            <div class="scene-text">
-                <h3>JJ</h3>
-                <p>Rudy Pankow como JJ Maybank.</p>
-            </div>
-
-        </div>
-
-        <div class="scene">
-
-            <img
-                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
-                alt="Chase Stokes como John B"
-                loading="lazy"
-            >
-
-            <div class="scene-text">
-                <h3>John B</h3>
-                <p>Chase Stokes como John B.</p>
-            </div>
-
-        </div>
 
         <div class="scene large">
 
@@ -943,9 +978,81 @@
 
         </div>
 
+        <div class="scene">
+
+            <img
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
+                alt="Madison Bailey como Kiara"
+                loading="lazy"
+            >
+
+            <div class="scene-text">
+                <h3>Kiara</h3>
+                <p>
+                    Madison Bailey como Kiara Carrera.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="scene">
+
+            <img
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
+                alt="Rudy Pankow como JJ"
+                loading="lazy"
+            >
+
+            <div class="scene-text">
+                <h3>JJ</h3>
+                <p>
+                    Rudy Pankow como JJ Maybank.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="scene">
+
+            <img
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
+                alt="Chase Stokes como John B"
+                loading="lazy"
+            >
+
+            <div class="scene-text">
+                <h3>John B</h3>
+                <p>
+                    Chase Stokes como John B Routledge.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="scene">
+
+            <img
+                src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=90"
+                alt="Oceano"
+                loading="lazy"
+            >
+
+            <div class="scene-text">
+                <h3>Outer Banks</h3>
+                <p>
+                    O universo de praias, barcos e aventuras.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 
 </section>
+
+<!-- =========================
+     LOCAÇÕES
+========================== -->
 
 <section class="locations" id="locacoes">
 
@@ -962,48 +1069,64 @@
     <div class="location-grid">
 
         <div class="location beach">
+
             <div class="location-content">
                 <h3>Kildare Island</h3>
+
                 <p>
                     A ilha fictícia onde vivem os Pogues
                     e os Kooks.
                 </p>
             </div>
+
         </div>
 
         <div class="location boneyard">
+
             <div class="location-content">
                 <h3>The Boneyard</h3>
+
                 <p>
                     Um dos lugares associados aos encontros
                     dos jovens da ilha.
                 </p>
             </div>
+
         </div>
 
         <div class="location ocean">
+
             <div class="location-content">
                 <h3>Shem Creek</h3>
+
                 <p>
                     Local utilizado para várias cenas
                     envolvendo barcos e água.
                 </p>
             </div>
+
         </div>
 
         <div class="location tropical">
+
             <div class="location-content">
                 <h3>Barbados</h3>
+
                 <p>
                     Local utilizado pela produção para
                     representar diferentes lugares da história.
                 </p>
             </div>
+
         </div>
 
     </div>
 
 </section>
+
+<!-- =========================
+     CURIOSIDADES
+========================== -->
 
 <section class="facts" id="curiosidades">
 
@@ -1014,45 +1137,69 @@
     <div class="facts-container">
 
         <div class="fact">
+
             <strong>01 — Kildare Island é fictícia</strong>
+
             <br>
+
             A ilha onde os Pogues vivem é fictícia,
             apesar de a produção utilizar diversas
             locações reais.
+
         </div>
 
         <div class="fact">
+
             <strong>02 — Os Pogues</strong>
+
             <br>
-            John B, JJ, Pope, Kiara, Sarah e Cleo fazem
-            parte do grupo central da história.
+
+            John B, JJ, Pope, Kiara, Sarah e Cleo
+            fazem parte do grupo central da história.
+
         </div>
 
         <div class="fact">
+
             <strong>03 — Caças ao tesouro</strong>
+
             <br>
+
             Mistérios e tesouros são alguns dos principais
             elementos que movimentam a história.
+
         </div>
 
         <div class="fact">
+
             <strong>04 — A produção</strong>
+
             <br>
+
             Outer Banks utiliza praias, barcos, mansões,
             ilhas e diferentes locações para construir
             o universo da série.
+
         </div>
 
         <div class="fact">
+
             <strong>05 — Temporada final</strong>
+
             <br>
+
             A quinta temporada é a temporada final de
             Outer Banks.
+
         </div>
 
     </div>
 
 </section>
+
+<!-- =========================
+     RODAPÉ
+========================== -->
 
 <footer>
 
@@ -1069,7 +1216,7 @@
     </p>
 
     <p style="margin-top:12px;font-size:13px;">
-        Fotos oficiais: Netflix / Tudum.
+        Fotos do elenco: Netflix / Tudum / Amy Harrity.
     </p>
 
 </footer>
