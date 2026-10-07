@@ -1,1009 +1,795 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Um site de fã cinematográfico e informativo sobre Off-Campus, os livros de Elle Kennedy e sua adaptação para televisão.">
-  <title>OFF-CAMPUS — Entre o amor e o gelo</title>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
-
-    :root {
-      --bg: #05070c;
-      --bg-2: #08111d;
-      --navy: #0b1830;
-      --blue: #173c68;
-      --blue-bright: #2d628f;
-      --wine: #5b1827;
-      --wine-bright: #8c2b3d;
-      --gold: #c7a76a;
-      --cream: #eee9df;
-      --white: #f7f7f5;
-      --muted: #a8afb9;
-      --line: rgba(255,255,255,.10);
-      --shadow: 0 25px 80px rgba(0,0,0,.42);
-      --radius: 22px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(23,60,104,.16), transparent 28%),
-        radial-gradient(circle at 85% 50%, rgba(91,24,39,.13), transparent 30%),
-        var(--bg);
-      color: var(--white);
-      font-family: "DM Sans", system-ui, sans-serif;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      background-image:
-        linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: linear-gradient(to bottom, black, transparent 90%);
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      object-fit: cover;
-    }
-
-    .section {
-      position: relative;
-      width: min(1240px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 110px 0;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    h1,
-    h2,
-    h3,
-    .display {
-      font-family: "Playfair Display", Georgia, serif;
-      line-height: 1.04;
-      margin: 0;
-    }
-
-    h2 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      max-width: 820px;
-    }
-
-    .section-heading {
-      margin-bottom: 55px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 680px;
-      margin: 22px 0 0;
-      font-size: 1.04rem;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100svh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      isolation: isolate;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3,5,9,.96) 0%,
-          rgba(3,5,9,.72) 35%,
-          rgba(3,5,9,.18) 72%,
-          rgba(3,5,9,.58) 100%
-        ),
-        linear-gradient(
-          0deg,
-          rgba(3,5,9,1) 0%,
-          rgba(3,5,9,.12) 46%,
-          rgba(3,5,9,.35) 100%
-        ),
-        url("https://static.independent.co.uk/2026/05/13/17/_Off_Campus__Portrait_Session_12445.jpg?fit=crop&height=1200&width=1200")
-        center/cover;
-
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        radial-gradient(
-          circle at 72% 30%,
-          rgba(41,83,126,.20),
-          transparent 28%
-        ),
-        linear-gradient(
-          135deg,
-          transparent 55%,
-          rgba(110,22,44,.18)
-        );
-
-      z-index: -1;
-      animation: atmosphere 9s ease-in-out infinite alternate;
-    }
-
-    .hero-content {
-      width: min(1240px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 0 0 12vh;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #ddd6c7;
-      font-size: .78rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .hero-kicker::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      font-size: clamp(4.8rem, 13vw, 11.5rem);
-      letter-spacing: -.055em;
-      max-width: 1000px;
-      text-shadow: 0 15px 50px rgba(0,0,0,.45);
-    }
-
-    .hero-tagline {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(1.25rem, 2.2vw, 2rem);
-      color: #f1eee9;
-      max-width: 700px;
-      margin: 22px 0 18px;
-    }
-
-    .hero-copy {
-      max-width: 670px;
-      color: #c7cbd1;
-      font-size: 1rem;
-    }
-
-    .scroll-mark {
-      position: absolute;
-      left: 50%;
-      bottom: 28px;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 65px;
-      background: linear-gradient(to bottom, transparent, var(--gold));
-      opacity: .8;
-      animation: breathe 2.2s ease-in-out infinite;
-    }
-
-    .scroll-mark::after {
-      content: "EXPLORE";
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translate(-50%, 100%) rotate(-90deg);
-      transform-origin: center;
-      color: #aaa;
-      font-size: .55rem;
-      letter-spacing: .28em;
-      white-space: nowrap;
-    }
-
-    /* SOBRE */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .about-copy {
-      color: #c0c5cd;
-      font-size: 1.02rem;
-    }
-
-    .about-copy p {
-      margin: 0 0 20px;
-    }
-
-    .about-art {
-      position: relative;
-      min-height: 570px;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-
-      background:
-        linear-gradient(180deg, transparent, rgba(0,0,0,.8)),
-        url("https://media-assets.vanityfair.it/photos/6a7dd5e64dfe6a3f5abfd3cf/master/w_3940%2Cc_limit/Prime%2520Video_Off%2520Campus_7.jpg")
-        center/cover;
-    }
-
-    .about-art::before {
-      content: "BRIAR UNIVERSITY";
-      position: absolute;
-      left: 26px;
-      bottom: 25px;
-      color: rgba(255,255,255,.86);
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 1.7rem;
-      letter-spacing: .08em;
-    }
-
-    .about-art::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: inherit;
-    }
-
-    /* LIVROS */
-
-    .books {
-      background:
-        radial-gradient(
-          circle at 15% 30%,
-          rgba(23,60,104,.16),
-          transparent 30%
-        );
-    }
-
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
-    }
-
-    .book-card {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.06),
-          rgba(255,255,255,.025)
-        );
-
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,.22);
-      transition:
-        transform .5s ease,
-        border-color .5s ease;
-    }
-
-    .book-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(199,167,106,.38);
-    }
-
-    .book-cover {
-      aspect-ratio: 2 / 3;
-      overflow: hidden;
-      background: #111827;
-    }
-
-    .book-cover img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-
-    .book-card:hover .book-cover img {
-      transform: scale(1.035);
-    }
-
-    .book-info {
-      padding: 19px;
-    }
-
-    .book-number {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .17em;
-      font-size: .63rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .book-info h3 {
-      font-size: 1.45rem;
-      margin-bottom: 3px;
-    }
-
-    .book-original {
-      color: #9fa7b3;
-      font-size: .78rem;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-
-    .book-couple {
-      color: #e3e0db;
-      font-size: .78rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .book-info p {
-      color: #9ea6b1;
-      font-size: .77rem;
-      margin: 0;
-    }
-
-    /* PERSONAGENS */
-
-    .characters {
-      background:
-        linear-gradient(
-          180deg,
-          transparent,
-          rgba(91,24,39,.06),
-          transparent
-        );
-    }
-
-    .character-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .character {
-      min-height: 490px;
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: #0a0e17;
-    }
-
-    .character-photo {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-
-    .character-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-
-    .character:hover img {
-      transform: scale(1.045);
-    }
-
-    .character-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(3,5,9,.02) 20%,
-          rgba(3,5,9,.28) 50%,
-          rgba(3,5,9,.96) 100%
-        );
-    }
-
-    .character-text {
-      position: absolute;
-      left: 19px;
-      right: 19px;
-      bottom: 18px;
-      z-index: 2;
-    }
-
-    .character-book {
-      color: var(--gold);
-      text-transform: uppercase;
-      font-size: .62rem;
-      letter-spacing: .17em;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
-
-    .character h3 {
-      font-size: 1.55rem;
-      margin-bottom: 6px;
-    }
-
-    .character p {
-      margin: 0;
-      color: #c1c6ce;
-      font-size: .77rem;
-      line-height: 1.5;
-    }
-
-    /* ADAPTAÇÃO */
-
-    .adaptation {
-      position: relative;
-      padding: 125px 0;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(5,7,12,.97),
-          rgba(5,7,12,.77),
-          rgba(5,7,12,.92)
-        ),
-        url("https://media-assets.vanityfair.it/photos/6a7dd5e64dfe6a3f5abfd3cf/master/w_3940%2Cc_limit/Prime%2520Video_Off%2520Campus_7.jpg")
-        center/cover fixed;
-    }
-
-    .adaptation-inner {
-      width: min(1240px, calc(100% - 48px));
-      margin: 0 auto;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .adaptation-copy {
-      max-width: 680px;
-    }
-
-    .adaptation-copy p {
-      color: #c1c6ce;
-      font-size: 1rem;
-      margin: 20px 0 0;
-    }
-
-    .adaptation-facts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .fact {
-      padding: 25px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.10);
-      backdrop-filter: blur(10px);
-    }
-
-    .fact strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
-      margin-bottom: 5px;
-    }
-
-    .fact span {
-      color: #9fa7b3;
-      font-size: .76rem;
-    }
-
-    /* ELENCO */
-
-    .cast-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .cast-card {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #0a0e17;
-    }
-
-    .cast-photo {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .cast-photo img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s ease;
-    }
-
-    .cast-card:hover .cast-photo img {
-      transform: scale(1.035);
-    }
-
-    .cast-info {
-      padding: 20px;
-    }
-
-    .cast-actor {
-      color: var(--gold);
-      font-size: .65rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
-
-    .cast-info h3 {
-      font-size: 1.45rem;
-      margin-bottom: 7px;
-    }
-
-    .cast-info p {
-      color: #9ea6b1;
-      font-size: .78rem;
-      margin: 0;
-    }
-
-    /* COMPARAÇÃO */
-
-    .comparison {
-      padding-bottom: 120px;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-    }
-
-    .comparison-side {
-      padding: 42px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(23,60,104,.14),
-          rgba(255,255,255,.025)
-        );
-    }
-
-    .comparison-side:last-child {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(91,24,39,.14),
-          rgba(255,255,255,.025)
-        );
-    }
-
-    .comparison-side h3 {
-      font-size: 2.1rem;
-      margin-bottom: 15px;
-    }
-
-    .comparison-side p {
-      color: #aeb4bd;
-      margin: 0 0 25px;
-    }
-
-    .comparison-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .comparison-item {
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 16px;
-      background: rgba(255,255,255,.025);
-    }
-
-    .comparison-item strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #f1eee9;
-    }
-
-    .comparison-item span {
-      color: #949da9;
-      font-size: .8rem;
-    }
-
-    /* UNIVERSO */
-
-    .universe-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .universe-card {
-      position: relative;
-      min-height: 330px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: #0a0e17;
-    }
-
-    .universe-card img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-      opacity: .75;
-      transition: transform .8s ease;
-    }
-
-    .universe-card:hover img {
-      transform: scale(1.04);
-    }
-
-    .universe-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(3,5,9,.05),
-          rgba(3,5,9,.94)
-        );
-    }
-
-    .universe-text {
-      position: absolute;
-      z-index: 2;
-      left: 23px;
-      right: 23px;
-      bottom: 22px;
-    }
-
-    .universe-text h3 {
-      font-size: 1.8rem;
-      margin-bottom: 5px;
-    }
-
-    .universe-text p {
-      color: #b9bec6;
-      font-size: .78rem;
-      margin: 0;
-    }
-
-    /* GALERIA */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 180px;
-      gap: 14px;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      position: relative;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .8s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.045);
-    }
-
-    .gallery-item:nth-child(1) {
-      grid-column: span 5;
-      grid-row: span 2;
-    }
-
-    .gallery-item:nth-child(2) {
-      grid-column: span 3;
-      grid-row: span 2;
-    }
-
-    .gallery-item:nth-child(3) {
-      grid-column: span 4;
-    }
-
-    .gallery-item:nth-child(4) {
-      grid-column: span 4;
-    }
-
-    .gallery-item:nth-child(5) {
-      grid-column: span 4;
-    }
-
-    .gallery-item:nth-child(6) {
-      grid-column: span 4;
-    }
-
-    .gallery-item:nth-child(7) {
-      grid-column: span 4;
-    }
-
-    .gallery-item:nth-child(8) {
-      grid-column: span 4;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 90px 24px 45px;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at 50% 0,
-          rgba(91,24,39,.18),
-          transparent 38%
-        ),
-        #03050a;
-    }
-
-    .footer-logo {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      letter-spacing: -.05em;
-    }
-
-    footer p {
-      color: #8f98a4;
-      max-width: 600px;
-      margin: 18px auto;
-    }
-
-    .footer-small {
-      margin-top: 45px;
-      color: #666e78;
-      font-size: .72rem;
-    }
-
-    /* ANIMAÇÕES */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(35px);
-      transition:
-        opacity .9s ease,
-        transform .9s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes atmosphere {
-      from {
-        transform: scale(1);
-        opacity: .7;
-      }
-
-      to {
-        transform: scale(1.04);
-        opacity: 1;
-      }
-    }
-
-    @keyframes breathe {
-      0%,
-      100% {
-        opacity: .35;
-        height: 45px;
-      }
-
-      50% {
-        opacity: 1;
-        height: 70px;
-      }
-    }
-
-    /* TABLET */
-
-    @media (max-width: 1050px) {
-      .book-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .character-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cast-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid,
-      .adaptation-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .about-art {
-        min-height: 500px;
-      }
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-      .section {
-        width: min(100% - 30px, 1240px);
-        padding: 75px 0;
-      }
-
-      .hero-content {
-        width: calc(100% - 30px);
-        padding-bottom: 15vh;
-      }
-
-      .hero {
-        min-height: 90svh;
-      }
-
-      .hero h1 {
-        font-size: clamp(4rem, 20vw, 7rem);
-      }
-
-      .hero-tagline {
-        font-size: 1.25rem;
-      }
-
-      .about-grid,
-      .adaptation-inner,
-      .comparison-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .about-art {
-        min-height: 420px;
-      }
-
-      .book-grid,
-      .character-grid,
-      .cast-grid,
-      .universe-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .book-info {
-        padding: 14px;
-      }
-
-      .book-info h3 {
-        font-size: 1.15rem;
-      }
-
-      .book-info p {
-        font-size: .72rem;
-      }
-
-      .character {
-        min-height: 380px;
-      }
-
-      .character h3 {
-        font-size: 1.3rem;
-      }
-
-      .character p {
-        font-size: .68rem;
-      }
-
-      .adaptation {
-        padding: 80px 0;
-        background-attachment: scroll;
-      }
-
-      .adaptation-inner {
-        width: calc(100% - 30px);
-      }
-
-      .adaptation-facts {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .comparison-side {
-        padding: 28px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 160px;
-      }
-
-      .gallery-item:nth-child(n) {
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-
-      .gallery-item:first-child {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-
-      footer {
-        padding-top: 70px;
-      }
-    }
-
-    @media (max-width: 470px) {
-      .book-grid,
-      .character-grid,
-      .cast-grid,
-      .universe-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .adaptation-facts {
-        grid-template-columns: 1fr;
-      }
-
-      .character {
-        min-height: 440px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Outer Banks | Pogues 4 Life</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #061c2b;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(3, 18, 28, 0.95);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #f4c95d;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f4c95d;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(
+                    rgba(0, 25, 40, 0.35),
+                    rgba(0, 10, 20, 0.9)
+                ),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85")
+                center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 60px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 10px #000;
+        }
+
+        .hero h1 span {
+            color: #f4c95d;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 30px 0;
+            max-width: 600px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            background: #f4c95d;
+            color: #062032;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: #f4c95d;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            color: #b7cbd5;
+            margin-bottom: 40px;
+            max-width: 850px;
+            line-height: 1.7;
+        }
+
+        .about {
+            background: #082b3d;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-text {
+            line-height: 1.8;
+            color: #dcebf0;
+            font-size: 17px;
+        }
+
+        .cast {
+            background: #041724;
+        }
+
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .cast-card {
+            background: #0b3043;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(244, 201, 93, 0.15);
+        }
+
+        .cast-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .cast-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .cast-info {
+            padding: 20px;
+        }
+
+        .cast-info h3 {
+            color: #f4c95d;
+            margin-bottom: 7px;
+        }
+
+        .cast-info p {
+            color: #c6d6dc;
+        }
+
+        .characters {
+            background: #0a3447;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .character {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.25);
+            border-left: 4px solid #f4c95d;
+            border-radius: 8px;
+        }
+
+        .character h3 {
+            color: #f4c95d;
+            margin-bottom: 10px;
+        }
+
+        .character p {
+            color: #d4e1e5;
+            line-height: 1.6;
+        }
+
+        .locations {
+            background: #052333;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .location {
+            position: relative;
+            min-height: 330px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .location::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, 0.9)
+            );
+        }
+
+        .location-content {
+            position: relative;
+            z-index: 2;
+            padding: 25px;
+        }
+
+        .location h3 {
+            color: #f4c95d;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .location p {
+            line-height: 1.5;
+        }
+
+        .boneyard {
+            background-image:
+                url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .beach {
+            background-image:
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .tropical {
+            background-image:
+                url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .ocean {
+            background-image:
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=80");
+        }
+
+        .facts {
+            background: #082b3d;
+        }
+
+        .facts-container {
+            max-width: 900px;
+        }
+
+        .fact {
+            padding: 22px;
+            margin-bottom: 15px;
+            background: #0c3a4f;
+            border-radius: 8px;
+            border-left: 4px solid #f4c95d;
+            line-height: 1.6;
+        }
+
+        .fact strong {
+            color: #f4c95d;
+        }
+
+        footer {
+            background: #020d14;
+            padding: 40px 8%;
+            text-align: center;
+            color: #91aab5;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f4c95d;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding-top: 170px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+    <header>
+        <div class="logo">OUTER BANKS</div>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="hero-kicker">
-        BRIAR UNIVERSITY
-      </div>
+        <nav>
+            <a href="#sobre">Série</a>
+            <a href="#elenco">Elenco</a>
+            <a href="#personagens">Personagens</a>
+            <a href="#locacoes">Cenários</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </nav>
+    </header>
 
-      <h1>OFF-CAMPUS</h1>
+    <section class="hero">
+        <div class="hero-content">
 
-      <div class="hero-tagline">
-        Entre o amor, a amizade, o hóquei e a vida universitária.
-      </div>
+            <h1>
+                Outer
+                <span>Banks</span>
+            </h1>
 
-      <p class="hero-copy">
-        Um universo criado por Elle Kennedy, onde amizades
+            <p>
+                Uma aventura entre amigos, praias, segredos,
+                conflitos e grandes caças ao tesouro.
+            </p>
+
+            <a href="#sobre" class="button">
+                EXPLORAR A SÉRIE
+            </a>
+
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+
+        <h2 class="section-title">Sobre a série</h2>
+
+        <p class="section-subtitle">
+            Conheça o universo dos Pogues, dos Kooks e da
+            fictícia Kildare Island.
+        </p>
+
+        <div class="about-grid">
+
+            <img
+                src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=85"
+                alt="Praia tropical"
+            >
+
+            <div class="about-text">
+
+                <p>
+                    <strong>Outer Banks</strong> é uma série de
+                    aventura e drama que acompanha um grupo de
+                    adolescentes envolvidos em mistérios,
+                    amizades, romances e caças ao tesouro.
+                </p>
+
+                <br>
+
+                <p>
+                    A história é ambientada principalmente na
+                    fictícia <strong>Kildare Island</strong>,
+                    onde existe uma divisão social entre os
+                    Pogues e os Kooks.
+                </p>
+
+                <br>
+
+                <p>
+                    A série foi criada por Josh Pate, Jonas Pate
+                    e Shannon Burke. A produção combina praias,
+                    barcos, mansões, ilhas tropicais e mistérios
+                    históricos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cast" id="elenco">
+
+        <h2 class="section-title">Elenco principal</h2>
+
+        <p class="section-subtitle">
+            Conheça alguns dos principais atores e seus
+            personagens na série.
+        </p>
+
+        <div class="cast-grid">
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=700&q=80"
+                    alt="Chase Stokes"
+                >
+
+                <div class="cast-info">
+                    <h3>Chase Stokes</h3>
+                    <p>John B Routledge</p>
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80"
+                    alt="Madelyn Cline"
+                >
+
+                <div class="cast-info">
+                    <h3>Madelyn Cline</h3>
+                    <p>Sarah Cameron</p>
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
+                    alt="Rudy Pankow"
+                >
+
+                <div class="cast-info">
+                    <h3>Rudy Pankow</h3>
+                    <p>JJ Maybank</p>
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=700&q=80"
+                    alt="Madison Bailey"
+                >
+
+                <div class="cast-info">
+                    <h3>Madison Bailey</h3>
+                    <p>Kiara Carrera</p>
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80"
+                    alt="Jonathan Daviss"
+                >
+
+                <div class="cast-info">
+                    <h3>Jonathan Daviss</h3>
+                    <p>Pope Heyward</p>
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80"
+                    alt="Carlacia Grant"
+                >
+
+                <div class="cast-info">
+                    <h3>Carlacia Grant</h3>
+                    <p>Cleo</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="characters" id="personagens">
+
+        <h2 class="section-title">Personagens</h2>
+
+        <div class="character-grid">
+
+            <div class="character">
+                <h3>John B</h3>
+
+                <p>
+                    Líder dos Pogues e protagonista da história.
+                    Sua busca pelo tesouro está ligada ao
+                    desaparecimento de seu pai.
+                </p>
+            </div>
+
+            <div class="character">
+                <h3>Sarah Cameron</h3>
+
+                <p>
+                    Uma Kook que se aproxima dos Pogues e passa
+                    a participar das aventuras e dos mistérios
+                    do grupo.
+                </p>
+            </div>
+
+            <div class="character">
+                <h3>JJ Maybank</h3>
+
+                <p>
+                    Melhor amigo de John B, conhecido por seu
+                    espírito impulsivo, lealdade e coragem.
+                </p>
+            </div>
+
+            <div class="character">
+                <h3>Kiara Carrera</h3>
+
+                <p>
+                    Inteligente, independente e muito ligada
+                    aos amigos, Kiara é uma das integrantes
+                    dos Pogues.
+                </p>
+            </div>
+
+            <div class="character">
+                <h3>Pope Heyward</h3>
+
+                <p>
+                    O mais estudioso do grupo e frequentemente
+                    essencial para decifrar pistas e enigmas.
+                </p>
+            </div>
+
+            <div class="character">
+                <h3>Cleo</h3>
+
+                <p>
+                    Uma personagem habilidosa e determinada que
+                    se torna uma importante integrante do grupo.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="locations" id="locacoes">
+
+        <h2 class="section-title">Cenários e locações</h2>
+
+        <p class="section-subtitle">
+            Embora a história se passe principalmente em
+            Kildare Island, várias cenas foram gravadas em
+            locais reais da Carolina do Sul e em outros lugares.
+        </p>
+
+        <div class="location-grid">
+
+            <div class="location beach">
+
+                <div class="location-content">
+
+                    <h3>Kildare Island</h3>
+
+                    <p>
+                        A ilha fictícia onde vivem os Pogues
+                        e os Kooks.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="location boneyard">
+
+                <div class="location-content">
+
+                    <h3>The Boneyard</h3>
+
+                    <p>
+                        Um dos pontos de encontro dos jovens
+                        da ilha. Algumas cenas foram filmadas
+                        em Hunting Island, na Carolina do Sul.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="location ocean">
+
+                <div class="location-content">
+
+                    <h3>Shem Creek</h3>
+
+                    <p>
+                        Região de Mount Pleasant utilizada
+                        para várias cenas envolvendo barcos.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="location tropical">
+
+                <div class="location-content">
+
+                    <h3>Barbados</h3>
+
+                    <p>
+                        A produção utilizou Barbados para
+                        representar diferentes locais tropicais
+                        da história.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="facts" id="curiosidades">
+
+        <h2 class="section-title">Curiosidades</h2>
+
+        <div class="facts-container">
+
+            <div class="fact">
+
+                <strong>01 — Kildare é fictícia</strong>
+
+                <br>
+
+                A ilha onde grande parte da história acontece
+                é fictícia, apesar de a série utilizar diversas
+                locações reais.
+
+            </div>
+
+            <div class="fact">
+
+                <strong>02 — Charleston</strong>
+
+                <br>
+
+                Grande parte das filmagens acontece na região
+                de Charleston, na Carolina do Sul.
+
+            </div>
+
+            <div class="fact">
+
+                <strong>03 — Tannyhill</strong>
+
+                <br>
+
+                A mansão da família Cameron é representada
+                por Lowndes Grove, uma propriedade histórica
+                em Charleston.
+
+            </div>
+
+            <div class="fact">
+
+                <strong>04 — Nassau</strong>
+
+                <br>
+
+                Apesar de a história apresentar Nassau,
+                nas Bahamas, algumas cenas foram filmadas
+                em Barbados.
+
+            </div>
+
+            <div class="fact">
+
+                <strong>05 — O Chateau</strong>
+
+                <br>
+
+                A casa de John B funciona como um dos
+                principais pontos de encontro dos Pogues.
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <div class="footer-logo">
+            POGUES 4 LIFE
+        </div>
+
+        <p>
+            Fan site de Outer Banks desenvolvido em HTML e CSS.
+        </p>
+
+        <p style="margin-top: 12px;">
+            Outer Banks é uma produção da Netflix.
+        </p>
+
+    </footer>
+
+</body>
+</html>
