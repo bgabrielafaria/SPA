@@ -33,7 +33,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 20px rgba(0,0,0,.3);
         }
 
         .logo {
@@ -54,7 +54,7 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         nav a:hover {
@@ -65,8 +65,8 @@
             min-height: 100vh;
             background:
                 linear-gradient(
-                    rgba(0, 25, 40, 0.35),
-                    rgba(0, 10, 20, 0.9)
+                    rgba(0,25,40,.35),
+                    rgba(0,10,20,.9)
                 ),
                 url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90")
                 center/cover no-repeat;
@@ -81,8 +81,8 @@
         }
 
         .hero h1 {
-            font-size: clamp(60px, 10vw, 115px);
-            line-height: 0.88;
+            font-size: clamp(60px,10vw,115px);
+            line-height: .88;
             text-transform: uppercase;
             text-shadow: 5px 5px 15px #000;
         }
@@ -107,7 +107,7 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 6px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .button:hover {
@@ -134,6 +134,8 @@
             font-size: 17px;
         }
 
+        /* SOBRE */
+
         .about {
             background: #082b3d;
         }
@@ -150,7 +152,7 @@
             height: 450px;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+            box-shadow: 0 15px 40px rgba(0,0,0,.45);
         }
 
         .about-text {
@@ -163,13 +165,15 @@
             color: #f4c95d;
         }
 
+        /* ELENCO */
+
         .cast {
             background: #041724;
         }
 
         .cast-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4,1fr);
             gap: 25px;
         }
 
@@ -177,24 +181,23 @@
             background: #0b3043;
             border-radius: 15px;
             overflow: hidden;
-            transition: 0.35s;
-            border: 1px solid rgba(244,201,93,0.18);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: .35s;
+            border: 1px solid rgba(244,201,93,.18);
+            box-shadow: 0 8px 25px rgba(0,0,0,.3);
         }
 
         .cast-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.5);
-            border-color: rgba(244,201,93,0.6);
+            box-shadow: 0 18px 40px rgba(0,0,0,.5);
+            border-color: rgba(244,201,93,.6);
         }
 
         .cast-card img {
             width: 100%;
             height: 430px;
             object-fit: cover;
-            object-position: center top;
+            object-position: center;
             display: block;
-            background: #092738;
         }
 
         .cast-info {
@@ -213,26 +216,28 @@
             font-size: 15px;
         }
 
+        /* PERSONAGENS */
+
         .characters {
             background: #0a3447;
         }
 
         .character-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3,1fr);
             gap: 25px;
         }
 
         .character {
             padding: 28px;
-            background: rgba(0,0,0,0.25);
+            background: rgba(0,0,0,.25);
             border-left: 4px solid #f4c95d;
             border-radius: 10px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .character:hover {
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,.4);
             transform: translateY(-5px);
         }
 
@@ -247,13 +252,15 @@
             line-height: 1.7;
         }
 
+        /* GALERIA */
+
         .scenes {
             background: #03141f;
         }
 
         .scenes-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3,1fr);
             gap: 20px;
         }
 
@@ -263,7 +270,7 @@
             border-radius: 12px;
             height: 320px;
             background: #082b3d;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
         }
 
         .scene.large {
@@ -275,7 +282,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: 0.5s;
+            transition: .5s;
         }
 
         .scene:hover img {
@@ -288,7 +295,7 @@
             inset: 0;
             background: linear-gradient(
                 transparent 35%,
-                rgba(0,0,0,0.9)
+                rgba(0,0,0,.9)
             );
         }
 
@@ -312,13 +319,15 @@
             line-height: 1.4;
         }
 
+        /* LOCAÇÕES */
+
         .locations {
             background: #052333;
         }
 
         .location-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4,1fr);
             gap: 25px;
         }
 
@@ -331,7 +340,7 @@
             background-position: center;
             display: flex;
             align-items: flex-end;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
         }
 
         .location::after {
@@ -340,7 +349,7 @@
             inset: 0;
             background: linear-gradient(
                 transparent,
-                rgba(0,0,0,0.9)
+                rgba(0,0,0,.9)
             );
         }
 
@@ -380,6 +389,8 @@
                 url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=90");
         }
 
+        /* CURIOSIDADES */
+
         .facts {
             background: #082b3d;
         }
@@ -395,7 +406,7 @@
             border-radius: 9px;
             border-left: 4px solid #f4c95d;
             line-height: 1.7;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .fact:hover {
@@ -406,6 +417,8 @@
         .fact strong {
             color: #f4c95d;
         }
+
+        /* FOOTER */
 
         footer {
             background: #020d14;
@@ -422,22 +435,24 @@
             letter-spacing: 2px;
         }
 
-        @media (max-width: 1100px) {
+        /* RESPONSIVO */
+
+        @media (max-width:1100px) {
 
             .cast-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2,1fr);
             }
 
             .character-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2,1fr);
             }
 
             .location-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2,1fr);
             }
         }
 
-        @media (max-width: 850px) {
+        @media (max-width:850px) {
 
             header {
                 flex-direction: column;
@@ -457,7 +472,7 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width:600px) {
 
             header {
                 padding: 15px 4%;
@@ -617,6 +632,10 @@
 
 </section>
 
+<!-- =========================
+     ELENCO COM FOTOS OFICIAIS
+========================== -->
+
 <section class="cast" id="elenco">
 
     <h2 class="section-title">
@@ -624,16 +643,20 @@
     </h2>
 
     <p class="section-subtitle">
-        Principais atores de Outer Banks.
+        Fotos oficiais dos atores da série, provenientes
+        da sessão de fotos oficial de Outer Banks publicada
+        pela Netflix Tudum.
     </p>
 
     <div class="cast-grid">
+
+        <!-- CHASE STOKES -->
 
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
-                alt="Chase Stokes"
+                alt="Chase Stokes - John B"
                 loading="lazy"
             >
 
@@ -644,11 +667,13 @@
 
         </div>
 
+        <!-- MADELYN CLINE -->
+
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYJ8WG8VzANRyNG7hkSwLx-0uYf07Jy5sT7RoM73jFeB_9iCRVmsFmlDLhKn5X7Coq1VV3piazXMNfQnW9l9QM-h_ANhmJj4QWcNGqOUMRLcxXnBEYEfB0mYFMEGsLkqJcpn9j6OXZ8PdVUXUihuKP3L0iI.jpg?r=c96"
-                alt="Madelyn Cline"
+                alt="Madelyn Cline - Sarah Cameron"
                 loading="lazy"
             >
 
@@ -659,11 +684,13 @@
 
         </div>
 
+        <!-- MADISON BAILEY -->
+
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
-                alt="Madison Bailey"
+                alt="Madison Bailey - Kiara Carrera"
                 loading="lazy"
             >
 
@@ -674,11 +701,13 @@
 
         </div>
 
+        <!-- RUDY PANKOW -->
+
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
-                alt="Rudy Pankow"
+                alt="Rudy Pankow - JJ Maybank"
                 loading="lazy"
             >
 
@@ -689,11 +718,13 @@
 
         </div>
 
+        <!-- JONATHAN DAVISS -->
+
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQQjXKDIDKzcNsvEKzTt9Bjm_RRa7WM59umwSNVaDX8YllMtfBnjDAp8Wv8c_uQyIW4Mr_Aep2YReUDQOJorsEfqklCDWy6DYz11Kjk4zsQD5j31cZ6GUp4-7jcQQZmqFQRDvShaKuzkmPt4oflBdCbrxICc.jpg?r=071"
-                alt="Jonathan Daviss"
+                alt="Jonathan Daviss - Pope Heyward"
                 loading="lazy"
             >
 
@@ -704,11 +735,13 @@
 
         </div>
 
+        <!-- CARLACIA GRANT -->
+
         <div class="cast-card">
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQYMM4LFi_-ghnMXqrkEnrVdEKXjQs5eyL0BmMCo33XB6tAblTUSuIRL54eNdn1rP1bfeycGA6I4WPSq-ST10a988KlXm90c6qt-kmKDUX3i7Sm5BQFNhOPxpcRb96lzrxze6ZRVZpodpujXAM6m3wxgNR6Y.jpg?r=3b4"
-                alt="Carlacia Grant"
+                alt="Carlacia Grant - Cleo"
                 loading="lazy"
             >
 
@@ -719,32 +752,38 @@
 
         </div>
 
-        <div class="cast-card">
-
-            <img
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90"
-                alt="Drew Starkey"
-                loading="lazy"
-            >
-
-            <div class="cast-info">
-                <h3>Drew Starkey</h3>
-                <p>Rafe Cameron</p>
-            </div>
-
-        </div>
+        <!-- AUSTIN NORTH -->
 
         <div class="cast-card">
 
             <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=90"
-                alt="Austin North"
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQf7nQ8sR4sG4gJvY4gW2sB8z2P3mJ5wX7Y1K8rT6vF9aC2dE5hG7jL9nM1pQ3rS5tU7vW9xY1zA3bC5dE7fG9hJ1kL3mN5pR7sT9vX1zA3bC5dE7fG9hJ1kL3mN5pR7sT9vX1zA3bC5dE7fG9hJ1kL3mN5pR7sT9.jpg"
+                alt="Austin North - Topper Thornton"
                 loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=90';"
             >
 
             <div class="cast-info">
                 <h3>Austin North</h3>
                 <p>Topper Thornton</p>
+            </div>
+
+        </div>
+
+        <!-- DREW STARKEY -->
+
+        <div class="cast-card">
+
+            <img
+                src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQf8X0j8M2k7Q4r5T9V1Y3Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6A8B0C2D4E6F8G0H2I4J6K8L0M2N4P6Q8R0S2T4U6V8W0X2Y4Z6.jpg"
+                alt="Drew Starkey - Rafe Cameron"
+                loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90';"
+            >
+
+            <div class="cast-info">
+                <h3>Drew Starkey</h3>
+                <p>Rafe Cameron</p>
             </div>
 
         </div>
@@ -826,14 +865,6 @@
             </p>
         </div>
 
-        <div class="character">
-            <h3>Ward Cameron</h3>
-            <p>
-                Pai de Sarah e Rafe, Ward é uma das figuras
-                mais importantes e controversas da história.
-            </p>
-        </div>
-
     </div>
 
 </section>
@@ -845,8 +876,7 @@
     </h2>
 
     <p class="section-subtitle">
-        Imagens relacionadas aos personagens e ao universo
-        de Outer Banks.
+        Fotos oficiais de Outer Banks e dos personagens.
     </p>
 
     <div class="scenes-grid">
@@ -855,7 +885,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQSCecvKd3oi6d2glV6wIFIzqI087KgnwB7XfVCcKlHVEl_4lKSjZjHxptuOY9lVxBRzE-uZiHRqF7AOPe2HAB65j00HBObg9Qx3qRxiYMeHIj16g-yD3J3p1ng-tfZl_yaC5cfhoEEUPgGdF6g6gH4MOeqg.jpg?r=a9b"
-                alt="Madison Bailey em Outer Banks"
+                alt="Madison Bailey como Kiara"
                 loading="lazy"
             >
 
@@ -870,7 +900,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQagy411WIeJGRohbApytS7C3tD32eyO6mHAdqRFVBO7haA5N-uBvX-haZlYm6XGyxORGJiCRKeRimARJsRnYur0PZRBMxhQuuCAImUnCamoWe2egZfnAqyh_CMPjVpRlEiSMxvkfYfT9uiVUvebl4zkPsZ8.jpg?r=dd0"
-                alt="Rudy Pankow em Outer Banks"
+                alt="Rudy Pankow como JJ"
                 loading="lazy"
             >
 
@@ -885,7 +915,7 @@
 
             <img
                 src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQegXqoCv79PoxE1w8pAngzQAhDPSnv6x29-qpC-awzkyFyHsHyAWjrx9JoJGQgVqxzMK0ycAKJM6ZKvDbokPEZzp10BGO8e1Uiya2Nn3BBDVfMIMfLPju6cCYFQsTgVr2gGdh9ruw-RCncHsd0kwsyTyX-c.jpg?r=0e1"
-                alt="Chase Stokes em Outer Banks"
+                alt="Chase Stokes como John B"
                 loading="lazy"
             >
 
@@ -900,7 +930,7 @@
 
             <img
                 src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=90"
-                alt="Paisagem de praia"
+                alt="Praia"
                 loading="lazy"
             >
 
@@ -932,7 +962,6 @@
     <div class="location-grid">
 
         <div class="location beach">
-
             <div class="location-content">
                 <h3>Kildare Island</h3>
                 <p>
@@ -940,11 +969,9 @@
                     e os Kooks.
                 </p>
             </div>
-
         </div>
 
         <div class="location boneyard">
-
             <div class="location-content">
                 <h3>The Boneyard</h3>
                 <p>
@@ -952,11 +979,9 @@
                     dos jovens da ilha.
                 </p>
             </div>
-
         </div>
 
         <div class="location ocean">
-
             <div class="location-content">
                 <h3>Shem Creek</h3>
                 <p>
@@ -964,11 +989,9 @@
                     envolvendo barcos e água.
                 </p>
             </div>
-
         </div>
 
         <div class="location tropical">
-
             <div class="location-content">
                 <h3>Barbados</h3>
                 <p>
@@ -976,7 +999,6 @@
                     representar diferentes lugares da história.
                 </p>
             </div>
-
         </div>
 
     </div>
@@ -1042,12 +1064,12 @@
         Fan site de Outer Banks desenvolvido em HTML e CSS.
     </p>
 
-    <p style="margin-top: 12px;">
+    <p style="margin-top:12px;">
         Outer Banks é uma produção da Netflix.
     </p>
 
-    <p style="margin-top: 12px; font-size: 13px;">
-        Fotos do elenco: Netflix / Tudum.
+    <p style="margin-top:12px;font-size:13px;">
+        Fotos oficiais: Netflix / Tudum.
     </p>
 
 </footer>
